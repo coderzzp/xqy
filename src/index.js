@@ -2,12 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import TweentyFive from './TweentyFive'
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" >
+        <Route index element={<App />} />
+        <Route path="25" element={<TweentyFive />}>
+          
+        </Route>
+      </Route>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
